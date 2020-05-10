@@ -1,0 +1,74 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>NataliaBot</title>
+    <!-- This styling is for the Web Chat demonstration purposes. It is recommended that style is moved to separate file for organization in larger projects -->
+    <style>
+        html, body {
+            height: 100%;
+        }
+
+        body {
+            margin: 0;
+        }
+
+        h1 {
+            font-size: 16px;
+            font-family: Segoe UI;
+            line-height: 20px;
+            color: whitesmoke;
+            display: table-cell;
+            padding: 13px 0px 0px 20px;
+        }
+
+        #heading {
+            background-color: black;
+            height: 50px;
+        }
+
+        .main {
+            margin: 18px;
+            border-radius: 4px;
+        }
+
+        div[role="form"] {
+            background-color: black;
+        }
+
+        #webchat {
+            position: fixed;
+            height: calc(100% - 50px);
+            width: 100%;
+            top: 50px;
+            overflow: hidden;
+        }
+    </style>
+</head>
+<body>
+    <h1 style="background-color:DodgerBlue;">NataliaBot</h1>
+    <div id="webchat" role="main"></div>
+    <script src="https://cdn.botframework.com/botframework-webchat/latest/webchat.js"></script>
+    <script>
+        const styleOptions = {
+            bubbleBackground: 'rgba(0, 0, 255, .1)',
+            bubbleFromUserBackground: 'rgba(0, 255, 0, .1)',
+            botAvatarImage: 'https://www.mariowiki.com/images/thumb/c/c7/BooMP8Official.png/180px-BooMP8Official.png',
+            userAvatarImage: 'https://www.mariowiki.com/images/thumb/0/0d/Raccoon_Mario_Artwork_-_Super_Mario_Bros._3.png/180px-Raccoon_Mario_Artwork_-_Super_Mario_Bros._3.png',
+            rootHeight: '50%',
+            rootWidth: '25%'
+        };
+
+        window.WebChat.renderWebChat(
+            {
+                directLine: window.WebChat.createDirectLine({
+                    secret: 'y0r_Ky_dyPY.8YZ0zNT6rcum5FPTuLmhZ9uQdT5qjFddrkvH3b_EOjM'
+                }),
+
+                // Passing 'styleOptions' when rendering Web Chat
+                styleOptions
+            },
+            document.getElementById('webchat')
+        );
+    </script>
+</body>
+</html>
